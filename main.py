@@ -5,6 +5,11 @@
 # Class: CS 30
 # Assignment: Map RPG
 #------------------------------------------------------------------------------
+"""
+Runs a continuous rpg where you can move around a map
+"""
+
+
 # Global variables for column and row
 column = 0
 row = 2
@@ -17,8 +22,7 @@ Ship_map = [
   ["BoilerTile", "NothingTile", "PirateTile", "NothingTile"]
 ]
 
-
-# contains all the code for movement
+# Contains all code for movement
 def Movement():
   global row, column
   while True:
