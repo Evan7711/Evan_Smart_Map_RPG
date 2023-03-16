@@ -24,6 +24,9 @@ Ship_map = [
 
 # Contains all code for movement
 def Movement():
+  """
+  Allows user to move around
+  """
   global row, column
   while True:
     Direction = input("Would you like to travel North, South, East, West: ")
