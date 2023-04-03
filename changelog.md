@@ -10,3 +10,5 @@ fixed - movement so player can not walk off map
 --------------------------------------------------------------
 v2.0
 added - map - nested dicitionary
+added searching function
+added empty list for inventory
