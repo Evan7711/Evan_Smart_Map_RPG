@@ -6,8 +6,9 @@
 # Assignment: Map RPG
 #------------------------------------------------------------------------------
 """
-Runs a continuous rpg where you can move around a map
+Runs a continuous rpg where you can move around a map and search for items
 """
+#------------------------------------------------------------------------------
 # Global variables for column and row
 column = 0
 row = 2
