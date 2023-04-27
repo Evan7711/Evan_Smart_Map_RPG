@@ -1,7 +1,7 @@
 #------------------------------------------------------------------------------
 # Created By: Evan Smart
 # Created On: 03/10/2023
-# Version: 2.0
+# Version: 3.0
 # Class: CS 30
 # Assignment: Map RPG
 #------------------------------------------------------------------------------
@@ -9,9 +9,8 @@
 Runs a continuous rpg where you can move around a map and search for items
 """
 #------------------------------------------------------------------------------
+import Movement
 # Global variables for column and row
-column = 0
-row = 2
 # Formats the map in rows and columns
 Ship_map = [
   ["PirateTile", "NothingTile", "StorageTile", "EscapeTile"],
@@ -51,40 +50,7 @@ Ship_tiles = {"PirateTile":
              }
 # Empty list that contains Inventory
 Inventory = []
-# Function for all movement
-def Movement():
-    """
-    Allows user to move around
-    """
-    global row, column
-    while True:
-        Direction = input("Would you like to travel North, South, East, West: ")
-        if Direction == "north" or Direction == "North":
-            if row > 0:
-                row -= 1
-                break
-            else:
-                print("you can't go that way")
-        elif Direction == "south" or Direction == "South":
-            if row < 3:
-                row += 1
-                break
-            else:
-                print("you can't go that way")
-        elif Direction == "east" or Direction == "East":
-            if column < 3:
-                column += 1
-                break
-            else:
-                print("you can't go that way")
-        elif Direction == "west" or Direction == "West":
-            if column > 0:
-                column -= 1
-                break
-            else:
-                print("you can't go that way")
-        else:
-            print("You can't do that")
+
 # Function for Finding Items
 def Look():
     """
@@ -129,7 +95,7 @@ def Look():
   
 # Code to print players current location
 while True:
-    current_location = Ship_map[row][column]
+    current_location = Ship_map[Movement.row][Movement.column]
     if current_location in Ship_keys:
         print(Ship_tiles[current_location]["Description"])
     else:
@@ -137,7 +103,7 @@ while True:
  #Code for Main Menu
     choice = input("What would you like to do: Walk, Search, Check Inventory, or Quit: ")
     if choice == "walk" or choice == "Walk":
-        Movement()
+        Movement.Movement()
     elif choice == "quit" or choice == "Quit":
         print("Thank you for playing")
         break
